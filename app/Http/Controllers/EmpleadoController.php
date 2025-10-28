@@ -22,7 +22,7 @@ class EmpleadoController extends Controller
     public function store(Request $request)
     {
         $empleado = Empleado::create($request->all());
-        return response()->json($producto, 201);
+        return response()->json($empleado, 201);
     }
 
     /**
