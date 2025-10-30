@@ -40,7 +40,7 @@ class EmpleadoController extends Controller
     {
         $empleado = Empleado::findOrFail($id);
 
-        $emplado = Empleado::update($request->all());
+        $empleado->update($request->all());
         return response()->json($empleado, 200);
     }
 
@@ -50,5 +50,9 @@ class EmpleadoController extends Controller
     public function destroy(string $id)
     {
         //
+        $empleado = Empleado::findOrFail($id);
+
+        $empleado = Empleado::destroy($id);
+        return response()->json($empleado, 204);
     }
 }
